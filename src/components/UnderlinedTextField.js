@@ -1,12 +1,7 @@
 import { theme } from '../core/theme'
 import React from 'react';
 import { View, Text, TouchableOpacity,StyleSheet } from 'react-native';
-import {useFonts} from 'expo-font';
 const UnderlinedTextField = ({ text, onClick }) => {
-  const [fontsLoaded] = useFonts({
-    'noteFont': require('../assets/note.ttf'),
-  });
-  if(fontsLoaded){
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={onClick}>
@@ -14,7 +9,6 @@ const UnderlinedTextField = ({ text, onClick }) => {
       </TouchableOpacity>
     </View>
   );
-  }
 };
 
 const styles = StyleSheet.create({
@@ -26,7 +20,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     color: theme.colors.primary,
-    fontFamily:'noteFont',
+    fontFamily:'noteFontEnglish',
     textDecorationLine: 'underline'
   }
 });

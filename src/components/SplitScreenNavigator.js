@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { theme } from '../core/theme';
-import {useFonts} from 'expo-font';
 const SplitScreenNavigator = ({ routes,activeRoute,setActiveRoute }) => {
   const [activeIndex, setActiveIndex] = useState(activeRoute);
   useEffect(() => {
     // navigation.navigate(routes[activeIndex]['path'])
     setActiveRoute(activeIndex);
   }, [activeIndex]);
-  const [fontsLoaded] = useFonts({
-    'headFont': require('../assets/head.ttf'),
-  });
-  if(fontsLoaded){
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -27,7 +23,7 @@ const SplitScreenNavigator = ({ routes,activeRoute,setActiveRoute }) => {
       </View>
     </View>
   );
-}
+
 };
 
 const styles = StyleSheet.create({
@@ -50,7 +46,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 16,
-    fontFamily: 'headFont',
+    fontFamily: 'headFontEnglish',
   },
   activeHeaderText: {
     fontWeight: 'bold',

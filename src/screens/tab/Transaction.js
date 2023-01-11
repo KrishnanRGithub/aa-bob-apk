@@ -7,7 +7,7 @@ import LoadingScreen from "../../components/LoadingScreen";
 import { fetchDataAA,getTransaction,storeTransaction } from "../../helpers/dataStore";
 import FetchLoader from "../../components/FetchLoader";
 import AppScreen from "../../components/AppScreen";
-// import AnalyticsBarChart from "../../components/AnalyticsBarChart";
+import AnalyticsBarChart from "../../components/AnalyticsBarChart";
 const config = require("../../../config");
 export default function Transaction({ navigation }) {
   
@@ -54,8 +54,8 @@ export default function Transaction({ navigation }) {
 
 
   return (
-    // <AppScreen prop={{onRefresh:()=>{refreshTransactions()},title:"Transactions",routes:[{"title":"Transactions"},{"title":"Analytics"}],activeRoute:activeScreen,setActiveRoute:setActiveScreen}} >
-    <AppScreen prop={{onRefresh:()=>{refreshTransactions()},title:"Transactions",routes:null,activeRoute:activeScreen,setActiveRoute:setActiveScreen}} >
+    <AppScreen prop={{onRefresh:()=>{refreshTransactions()},title:"Transactions",routes:[{"title":"Transactions"},{"title":"Analytics"}],activeRoute:activeScreen,setActiveRoute:setActiveScreen}} >
+    {/*  <AppScreen prop={{onRefresh:()=>{refreshTransactions()},title:"Transactions",routes:null,activeRoute:activeScreen,setActiveRoute:setActiveScreen}} > */}
        {transaction==null?<FetchLoader></FetchLoader>:null}  
       {/* {transaction && transaction.map((i, index) => (
                   <TransactionList
@@ -73,11 +73,11 @@ export default function Transaction({ navigation }) {
               onEndReached={handleLoadMore}
               onEndReachedThreshold={0.9}
             />:null} 
-      {/* {activeScreen==1&&transaction!=null?<AnalyticsBarChart
+      {activeScreen==1&&transaction!=null?<AnalyticsBarChart
               values={transaction}
               monthYear={"2020-09"}
 
-            />:null} */}
+            />:null}
     </AppScreen>
   );
 }

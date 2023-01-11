@@ -17,26 +17,26 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 const EquityHistoryList = (prop) => {
 
     prop=prop.prop;
-    
-    // var typeColor="black";
-    // if(prop.type=="SELL"){
-    //     typeColor="green";
-    // }else{
-    //     typeColor="maroon";
-    // }
-    
+    var colorType="black";
+    if(prop.type=="BUY"){
+      colorType="maroon";
+    }else if (prop.type=="SELL"){
+      colorType="green";
+    }
     return (
     <View style={styles.cellContainer}>
       <View style={styles.textContainer}>
         <View>
             <Text style={styles.nameText}>{prop.symbol+" "+prop.exchange}</Text>
-            <Text style={{...styles.typeText}}>{prop.equityCatgory}</Text>
+            <Text style={[{...styles.typeText,color:colorType}]}>{prop.type}</Text>
+            <Text style={styles.dateText}>{prop.dateOfTransaction}</Text>
+
         </View>
-        <Text style={styles.dateText}>{prop.dateOfTransaction}</Text>
       </View>
       <View style={styles.rateContainer}>
       <Text  style={styles.amountText}>{"₹"+prop.rate}</Text>
         <Text style={styles.unitText}>{prop.units+" units"}</Text>
+
       </View>
     </View>
   );
@@ -46,14 +46,10 @@ const styles = StyleSheet.create({
   cellContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
-    borderBottomColor: 'lightgray',
-    borderBottomWidth: 0.2,
-  },
-  icon: {
-    width: 32,
-    height: 32,
-    marginRight: 16,
+    padding: 20,
+    paddingVertical:12,
+    // borderBottomColor: 'lightgray',
+    // borderBottomWidth: 0.2,
   },
   textContainer: {
     flex: 1,
@@ -63,28 +59,34 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily:"noteFontEnglish"
+    // fontWeight: 'bold',
   },
   typeText: {
+    fontFamily:"headFontEnglish",
     fontSize: 16,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
 },
   dateText: {
     fontSize: 14,
     color: 'gray',
+    fontFamily:"noteFontEnglish"
   },
   unitText: {
     fontSize: 14,
     color: 'gray',
     textAlign:"right",
+    fontFamily:"noteFontEnglish"
 },
   timeText: {
     fontSize: 14,
     color: 'gray',
+    fontFamily:"noteFontEnglish"
   },
   amountText: {
-    fontWeight:"bold",
+    // fontWeight:"bold",
     fontSize: 18,
+    fontFamily:"headFontEnglish"
   },
 });
 

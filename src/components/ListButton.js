@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 15,
-    borderBottomColor: 'lightgray',
-    borderBottomWidth: 0.2,
+    // borderBottomColor: 'lightgray',
+    // borderBottomWidth: 0.2,
   },
   text: {
     fontSize: 18,

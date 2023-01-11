@@ -2,16 +2,8 @@ import React, {useEffect} from 'react'
 import { ImageBackground, StyleSheet, Text,Image, View } from 'react-native'
 import { theme } from '../core/theme'
 import Logo from '../components/Logo';
-import { useFonts } from 'expo-font';
 
 export default NameScreen = ({ navigation }) => {
-
-  const [fontsLoaded] = useFonts({
-    'titleFont': require('../assets/title.ttf'),
-    'noteFont': require('../assets/note.ttf'),
-  });
-  if(fontsLoaded){
-
 
     setTimeout(() => {
         navigation.navigate('Login')
@@ -31,7 +23,7 @@ export default NameScreen = ({ navigation }) => {
     </View>
 
   );
-  }
+  
 };
 
 
@@ -55,14 +47,14 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 60,
         color: theme.colors.primary,
-        fontFamily: "titleFont",
+        fontFamily: "titleFontEnglish",
         paddingVertical: 3,
       },
     subtext: {
         fontSize: 14,
         color: theme.colors.secondary,
         paddingVertical: 10,
-        fontFamily: "noteFont",
+        fontFamily: "noteFontEnglish",
       },
       image: {
         width: 150,

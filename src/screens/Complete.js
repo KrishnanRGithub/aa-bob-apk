@@ -3,7 +3,7 @@ import Background from "../components/Background";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import LoadingScreen from "../components/LoadingScreen";
-
+import  {useFonts} from 'expo-font';
 
 import { storeSession,getSession,clearSession } from "../helpers/sessionHandler";
 
@@ -33,8 +33,7 @@ export default function Complete({ navigation }) {
   if(renderPage==false){
     return<><LoadingScreen></LoadingScreen></>
   }
-
-
+ 
   return (
     // <Background>
     //   <Header>Consent successfully approved</Header>

@@ -1,17 +1,11 @@
 import React from 'react';
 import { View, Text, Image, StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
 import { theme } from '../core/theme'
-import {useFonts} from 'expo-font';
 
 const BackButton = ({ title, onPress, children }) => {
-  const [fontsLoaded] = useFonts({
-    'headFont': require('../assets/head.ttf'),
-  });
-
-  if(fontsLoaded){
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor= "papayawhip" />
+        <StatusBar backgroundColor= {theme.colors.background} />
         <View style={{ flexDirection: 'row',  width: "100%" }}>
           <TouchableOpacity onPress={onPress}>
             <Image source={require('../assets/arrow_back.png')} style={styles.backButton} />
@@ -21,12 +15,12 @@ const BackButton = ({ title, onPress, children }) => {
         {children}
       </View>
     );
-  }
+  
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "papayawhip",
+    backgroundColor: theme.colors.background,
     borderBottomWidth: 0,
     width: "100%",
     flexDirection: 'row',
@@ -37,7 +31,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
-    fontFamily: 'headFont',
+    fontFamily: 'headFontEnglish',
     // fontWeight: 'bold',
     color: theme.colors.primary,
     marginLeft: 10,

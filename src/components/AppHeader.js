@@ -1,12 +1,8 @@
 import React,{useState} from 'react';
 import { View, Text, StatusBar, StyleSheet } from 'react-native';
 import { theme } from '../core/theme'
-import {useFonts} from 'expo-font';
 const AppHeader = ({ title,subNav,children,routes }) => {
-const [fontsLoaded] = useFonts({
-  'headFont': require('../assets/head.ttf'),
-});
-if(fontsLoaded){
+
     return (
     <View style={styles.container}>
       <View style={{     flexDirection: 'row',
@@ -18,7 +14,7 @@ if(fontsLoaded){
       {children}
     </View>
   );
-    }
+    
 };
 
 const styles = StyleSheet.create({
@@ -34,7 +30,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
-    fontFamily: 'headFont',
+    fontFamily: 'headFontEnglish',
     // fontWeight: 'bold',
     color: theme.colors.primary,
     marginLeft: 10,

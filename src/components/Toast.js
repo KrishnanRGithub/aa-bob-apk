@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Animated, Easing } from 'react-native';
-import {useFonts} from 'expo-font';
 const Toast = ({ message, type }) => {
   const [fadeAnim] = useState(new Animated.Value(0));
 
@@ -22,10 +21,7 @@ const Toast = ({ message, type }) => {
     }).start();
   };
 
-  const [fontsLoaded] = useFonts({
-    'noteFont': require('../assets/note.ttf'),
-  });
-  if(fontsLoaded){
+
       return (
         <Animated.View
           style={{
@@ -39,7 +35,7 @@ const Toast = ({ message, type }) => {
           <Text style={styles.text}>{message}</Text>
         </Animated.View>
       );
-  }
+  
 };
 
 
@@ -100,7 +96,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     flex: 1,
-    fontFamily: "noteFont",
+    fontFamily: "noteFontEnglish",
   },
 });
 

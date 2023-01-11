@@ -22,15 +22,12 @@ import { BarChart } from "react-native-gifted-charts";
 import { theme } from '../core/theme'
 import React from 'react';
 import { View, Text,StyleSheet } from 'react-native';
-import {useFonts} from 'expo-font';
 import { filterByDate,convertToDictionary } from "../helpers/categorySorted";
 const AnalyticsBarChart = ({values,monthYear}) => {
-  const [fontsLoaded] = useFonts({
-    'noteFont': require('../assets/note.ttf'),
-  });
-      const dictionary = {"shopping":0,"entertainment":0,"bank":0,"income":0,"expense":0,"investment":0,"other":0};
-//   var filtered=filterByDate(values,monthYear);
-//   var dictionary=convertToDictionary(filtered);
+
+  var dictionary = {"shopping":0,"entertainment":0,"bank":0,"income":0,"expense":0,"investment":0,"other":0};
+  var filtered=filterByDate(values,monthYear);
+  dictionary=convertToDictionary(filtered);
 //   const data = {
 //     labels: ["shopping","entertainment","bank","income","expense","investment","other"],
 //     datasets: [
@@ -49,7 +46,6 @@ var data =[
     {value:dictionary['other'],label:'other'},
 ]
 
-  if(fontsLoaded){
   return (
     <BarChart
     barWidth={22}
@@ -61,7 +57,7 @@ var data =[
     xAxisThickness={0}
 />
   );
-  }
+  
 };
 
 const styles = StyleSheet.create({
@@ -73,7 +69,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 13,
     color: "gray",
-    fontFamily:'noteFont',
+    fontFamily:'noteFontEnglish',
   }
 });
 

@@ -1,19 +1,12 @@
 import React from 'react'
 import { Image, StyleSheet,Text } from 'react-native'
-import { useFonts } from 'expo-font';
 
 export default function FetchLoader() {
-    const [fontsLoaded] = useFonts({
-        'noteFont': require('../assets/note.ttf'),
-      });
-      if(fontsLoaded){
-    
-    
-        return<>
+            return<>
         <Image source={require('../assets/onstart-loading.gif')} style={styles.image} />
         <Text style={styles.note}>Note : Ensure that you have given access in AA</Text>
         </> 
-      }
+      
 }
 
 const styles = StyleSheet.create({
@@ -31,7 +24,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    fontFamily: "noteFont",
+    fontFamily: "noteFontEnglish",
     fontSize:14
   }
 })

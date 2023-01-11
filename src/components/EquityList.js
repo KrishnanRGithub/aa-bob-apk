@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    borderBottomColor: 'lightgray',
-    borderBottomWidth: 0.2,
+    // borderBottomColor: 'lightgray',
+    // borderBottomWidth: 0.2,
   },
   icon: {
     width: 32,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily:"headFontEnglish"
   },
   ratioText: {
     fontSize: 16,
@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'gray',
     textAlign:"right",
+    fontFamily:"noteFontEnglish"
 },
   timeText: {
     fontSize: 14,

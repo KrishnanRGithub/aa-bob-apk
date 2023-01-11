@@ -5,11 +5,18 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { theme } from "./src/core/theme";
 import { StartScreen, Complete, Dashboard, Login, Signup, Logout,NameScreen} from "./src/screens";
 import { Profile, Equities, Transaction, MutualFund,AccountDetails } from "./src/screens";
-
+import {useFonts} from 'expo-font';
 const Stack = createStackNavigator();
 
 export default function App() {
   console.ignoredLogs = ['Warning: Each', 'Warning: Failed'];
+  const [fontsLoaded] = useFonts({
+    'noteFontEnglish': require('./src/assets/note.ttf'),
+    'headFontEnglish': require('./src/assets/head.ttf'),
+    'titleFontEnglish': require('./src/assets/title.ttf'),
+  
+  });  
+  if(fontsLoaded){
   return (
     <Provider theme={theme}>
       <NavigationContainer>
@@ -35,4 +42,5 @@ export default function App() {
       </NavigationContainer>
     </Provider>
   );
+  }
 }
