@@ -1,0 +1,3 @@
+krishnan@krish:~/Desktop/AA/AA Submission/aa-bob-apk$ export ANDROID_HOME="/media/krishnan/Linux Programmin/android-sdk"
+krishnan@krish:~/Desktop/AA/AA Submission/aa-bob-apk$ export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+krishnan@krish:~/Desktop/AA/AA Submission/aa-bob-apk$ eas build -p android --profile preview --local

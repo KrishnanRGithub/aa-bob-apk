@@ -14,7 +14,7 @@ const AccountsCard = (prop) => {
       <Text style={styles.dematIdText}>{"DEMAT ID "+prop.dematId}</Text>
       <Text style={styles.panText}>{"PAN "+prop.pan}</Text>
       <Text style={styles.currentValueText}>{"₹"+prop.currentValue}</Text>
-      <Text style={styles.investmentValueText}>{"₹"+prop.investmentvalue}</Text>
+      {/* <Text style={styles.investmentValueText}>{"₹"+prop.investmentvalue}</Text> */}
     </View>
   );}
   else if(prop.fiType=="MUTUAL_FUNDS"){

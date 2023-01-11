@@ -75,7 +75,7 @@ export default function Transaction({ navigation }) {
             />:null} 
       {activeScreen==1&&transaction!=null?<AnalyticsBarChart
               values={transaction}
-              monthYear={"2020-09"}
+              monthYear={"2022-06"}
 
             />:null}
     </AppScreen>

@@ -9,6 +9,6 @@ export const theme = {
     secondary: '#414757',
     error: '#cc0000',
     background: '#ffffff',
-    // "papayawhip"
+    org:"papayawhip"
   },
 }

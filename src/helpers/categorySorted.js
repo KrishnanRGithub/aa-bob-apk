@@ -6,7 +6,7 @@
     const dictionary = {"shopping":0,"entertainment":0,"bank":0,"income":0,"expense":0,"investment":0,"other":0};
   
     transactions.forEach(transaction => {
-        dictionary[classifyCategoryCode(transaction.categoryCode)]+=parseFloat(transaction.amount);
+        dictionary[classifyCategories(transaction.categoryCode)]+=parseFloat(transaction.amount);
     });
 
     return dictionary;
