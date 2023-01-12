@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { getSession } from "../../helpers/sessionHandler";
 import { FlatList } from "react-native";
-import DateRangePicker from "../../components/DateRangePicker";
 import TransactionList from "../../components/TransactionList";
 import LoadingScreen from "../../components/LoadingScreen";
+import MonthYearPicker from "../../components/MonthYearPicker";
 import { fetchDataAA,getTransaction,storeTransaction } from "../../helpers/dataStore";
 import FetchLoader from "../../components/FetchLoader";
 import AppScreen from "../../components/AppScreen";
+import { View} from 'react-native';
 import AnalyticsBarChart from "../../components/AnalyticsBarChart";
 const config = require("../../../config");
 export default function Transaction({ navigation }) {
   
-
+  const [currDate,setDate]=useState("2022-03")
   const [transaction, setTransaction] = useState(null);
   const [userDetails,setUserDetails] = useState(null);
   const [data, setData] = useState(null);
@@ -73,11 +74,14 @@ export default function Transaction({ navigation }) {
               onEndReached={handleLoadMore}
               onEndReachedThreshold={0.9}
             />:null} 
-      {activeScreen==1&&transaction!=null?<AnalyticsBarChart
+      {activeScreen==1&&transaction!=null?
+      <View>
+      <MonthYearPicker currDate={currDate} setDate={setDate}/> 
+      <AnalyticsBarChart
               values={transaction}
-              monthYear={"2022-06"}
+              monthYear={currDate}
 
-            />:null}
+            /></View>:null}
     </AppScreen>
   );
 }

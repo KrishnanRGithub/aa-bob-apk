@@ -1,11 +1,12 @@
 
 
 // import { BarChart } from "react-native-gifted-charts";
+import MonthYearPicker from "./MonthYearPicker";
 
 import TransactionList from './TransactionList';
 import { FlatList } from 'react-native';
 import { theme } from '../core/theme'
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text,StyleSheet ,Dimensions} from 'react-native';
 import { filterByDate,convertToDictionary } from "../helpers/categorySorted";
 import {
@@ -17,22 +18,13 @@ import {
   StackedBarChart,
 } from "react-native-chart-kit";
 const AnalyticsBarChart = ({values,monthYear}) => {
-
   var dictionary = {"shopping":0,"entertainment":0,"bank":0,"income":0,"expense":0,"investment":0,"other":0};
-  var filtered=filterByDate(values,monthYear);
+  const filtered=filterByDate(values,monthYear);
   dictionary=convertToDictionary(filtered);
-  const data = {
-    labels: ["Shopping","Entertainment","Bank","Income","Expense","Investment","Other"],
-    datasets: [
-      {
-        data: [dictionary["shopping"],dictionary["entertainment"],dictionary["bank"],dictionary["income"],dictionary["expense"],dictionary["investment"],dictionary["other"]]
-      },
-      
-    ]
-  };
-   var total = dictionary["shopping"]+dictionary["entertainment"]+dictionary["bank"]+dictionary["income"]+dictionary["expense"]+dictionary["investment"]+dictionary["other"]
+
+  var total = dictionary["shopping"]+dictionary["entertainment"]+dictionary["bank"]+dictionary["income"]+dictionary["expense"]+dictionary["investment"]+dictionary["other"]
         
-  const data3 = [
+  const data = [
     {
       name: "Shopping",
       amount:dictionary["shopping"],
@@ -83,15 +75,6 @@ const AnalyticsBarChart = ({values,monthYear}) => {
       legendFontSize: 15
     }
   ];
-// var data =[
-//      {value:dictionary['shopping'],label:'shopping'},
-//     {value:dictionary['entertainment'],label:'entertainment'},
-//     {value:dictionary['bank'],label:'bank'},
-//     {value:dictionary['income'],label:'income'},
-//     {value:dictionary['expense'],label:'expense'},
-//     {value:dictionary['investment'],label:'investment'},
-//     {value:dictionary['other'],label:'other'},
-// ]
 const chartConfig = {
   backgroundGradientFrom: "gray",
   backgroundGradientTo: "darkgray",
@@ -104,7 +87,7 @@ const chartConfig = {
   return (
 <>
 <PieChart
-  data={data3}
+  data={data}
   width={Dimensions.get("window").width} // from react-native
   height={220}
   chartConfig={chartConfig}
@@ -140,3 +123,15 @@ const styles = StyleSheet.create({
 });
 
 export default AnalyticsBarChart;
+
+
+// const data = {
+//   labels: ["Shopping","Entertainment","Bank","Income","Expense","Investment","Other"],
+//   datasets: [
+//     {
+//       data: [dictionary["shopping"],dictionary["entertainment"],dictionary["bank"],dictionary["income"],dictionary["expense"],dictionary["investment"],dictionary["other"]]
+//     },
+    
+//   ]
+// };
+
