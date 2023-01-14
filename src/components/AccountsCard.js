@@ -27,16 +27,28 @@ const AccountsCard = (prop) => {
         <Text style={styles.panText}>{"PAN "+prop.pan}</Text>
       </View>
     );
-  }else{ 
+  }else if(prop.fiType=="DEPOSIT"){
+    return (
+      <View style={styles.cellContainer}>
+      <Text style={styles.maskedAccountNumberText}>{prop.maskedAccountNumber}</Text>
+      <Text style={styles.fiTypeText}>{prop.fiType}</Text>
+      <Text style={styles.nameText}>{prop.name}</Text>
+      <Text style={styles.panText}>{"PAN "+prop.pan}</Text>
+      <Text style={styles.panText}>{"IFSC "+prop.ifsc}</Text>
+      <Text style={styles.dematIdText}>{prop.branch}</Text>
+      <Text style={styles.currentValueText}>{"₹"+prop.currentbalance}</Text>
+      </View>
+     );     
+  }
+  else{ 
         return (
             <View style={styles.cellContainer}>
             <Text style={styles.maskedAccountNumberText}>{prop.maskedAccountNumber}</Text>
-            <Text style={styles.fiTypeText}>{prop.fiType}</Text>
+            <Text style={styles.fiTypeText}>{prop.fiType.toUpper()}</Text>
             <Text style={styles.nameText}>{prop.name}</Text>
             <Text style={styles.panText}>{"PAN "+prop.pan}</Text>
             <Text style={styles.dematIdText}>{prop.mobile}</Text>
             </View>
-    
         );     
   }}
     catch(e){

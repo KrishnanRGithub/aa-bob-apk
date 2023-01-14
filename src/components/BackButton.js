@@ -28,6 +28,8 @@ const styles = StyleSheet.create({
     height: 50,
     overflow: 'visible',
     zIndex:1,
+    borderBottomColor: 'lightgray',
+    borderBottomWidth: 0.2,
   },
   title: {
     fontSize: 25,

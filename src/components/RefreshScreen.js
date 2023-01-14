@@ -13,7 +13,7 @@ const RefreshScreen = ({ children, onRefresh }) => {
     setRefreshing(false);
     setFetching(true);
     await onRefresh();
-    setTimeout(() => {setFetching(false)}, 2000);
+    setTimeout(() => {setFetching(false)}, 2500);
 };
 
   const handleScrollBeginDrag = () => {

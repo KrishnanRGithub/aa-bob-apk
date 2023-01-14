@@ -21,12 +21,12 @@ export default function App() {
     <Provider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="NameScreen"
+          initialRouteName="Login"
           screenOptions={{
             headerShown: false,
           }}
         >
-          <Stack.Screen name="NameScreen" component={NameScreen} />
+          {/* <Stack.Screen name="NameScreen" component={NameScreen} /> */}
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="StartScreen" component={StartScreen} />
