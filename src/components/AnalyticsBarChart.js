@@ -94,6 +94,7 @@ const chartConfig = {
   accessor={"amount"}
   backgroundColor={"transparent"}
   avoidFalseZero={"true"}
+  style={{fontFamily:'noteFontEnglish'}}
 />
 <FlatList
               data={filtered}
@@ -119,6 +120,9 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: "gray",
     fontFamily:'noteFontEnglish',
+  },
+  piechart:{
+    fontFamily:'noteFontEnglish',  
   }
 });
 

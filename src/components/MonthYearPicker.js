@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text,StyleSheet } from 'react-native';
+import { View, Text,StyleSheet,Dimensions } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 const MonthYearPicker = ({currDate,setDate}) => {
 
@@ -50,16 +50,16 @@ const styles = StyleSheet.create({
   container: {
     display:"flex",
     flexDirection:"row",
-    marginHorizontal:20,
-    marginTop:10,
+    marginHorizontal:30,
+    marginTop:5,
     marginBottom:20,
   },
   pickerMonth:{
-    width:200,
+    width:Dimensions.get('screen').width*4/7-30,
     height:30
   },
   pickerYear:{
-    width:150,
+    width:Dimensions.get('screen').width*3/7-30,
     height:30
   },
   pickerContainer:{

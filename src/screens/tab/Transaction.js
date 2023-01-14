@@ -9,6 +9,7 @@ import FetchLoader from "../../components/FetchLoader";
 import AppScreen from "../../components/AppScreen";
 import { View} from 'react-native';
 import AnalyticsBarChart from "../../components/AnalyticsBarChart";
+import BankCard from '../../components/BankCard';
 const config = require("../../../config");
 export default function Transaction({ navigation }) {
   
@@ -17,6 +18,8 @@ export default function Transaction({ navigation }) {
   const [userDetails,setUserDetails] = useState(null);
   const [data, setData] = useState(null);
   const [activeScreen,setActiveScreen] = useState(0);
+  const [accounts, setAccounts] = useState(null);
+
 
   const handleLoadMore = () => {
     // Load the next set of items here and add them to the list
@@ -42,7 +45,12 @@ export default function Transaction({ navigation }) {
         console.log("Setting transaction in TPage",data.data.length)
         setTransaction(data.data);
         setData(data.data.slice(0,100))
-        storeTransaction(data.data)  ;
+        storeTransaction(data.data);
+
+        data =await fetchDataAA(userDetails['mobile'],"accounts")
+        console.log("Setting accounts in TPage",data.data)
+        let temp=[...data.data]
+        setAccounts(temp);
       }
       catch(err){
         console.log(err);
@@ -65,7 +73,16 @@ export default function Transaction({ navigation }) {
                   ></TransactionList>
               ))} */}
 
-    {activeScreen==0?<FlatList
+    {activeScreen==0?<View>
+             <FlatList
+              data={accounts}
+              renderItem={({ item, index }) => (
+                <BankCard key={index} prop={item}></BankCard>
+              )}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            />
+            <FlatList
               data={data}
               renderItem={({ item, index }) => (
                 <TransactionList key={index} prop={item}></TransactionList>
@@ -73,7 +90,7 @@ export default function Transaction({ navigation }) {
               keyExtractor={(item, index) => index.toString()}
               onEndReached={handleLoadMore}
               onEndReachedThreshold={0.9}
-            />:null} 
+            /></View>:null} 
       {activeScreen==1&&transaction!=null?
       <View>
       <MonthYearPicker currDate={currDate} setDate={setDate}/> 

@@ -4,7 +4,8 @@ import config from "../../config";
 const key =  {
     transaction:"transaction",
     equity:"equity",
-    mutualfund:"mutual_fund"
+    mutualfund:"mutual_fund",
+    accounts:"accounts",
 }
 
 
@@ -42,6 +43,10 @@ export async function storeMutualFund(value){
     return await storeSession(key.mutualfund, value)   ;
 }
 
+export async function storeAccounts(value){
+    return await storeSession(key.accounts, value)   ;
+}
+
 
 export async function getTransaction(value){
     return await getSession(key.transaction);
@@ -53,4 +58,8 @@ export async function getEquity(value){
 
 export async function getMutualFund(value){
     return await getSession(key.mutualfund)   ;
+}
+
+export async function getAccounts(value){
+    return await getSession(key.accounts)   ;
 }
