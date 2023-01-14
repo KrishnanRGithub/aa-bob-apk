@@ -10,12 +10,7 @@ import React, { useState } from 'react';
 import { View, Text,StyleSheet ,Dimensions} from 'react-native';
 import { filterByDate,convertToDictionary } from "../helpers/categorySorted";
 import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart,
+  PieChart
 } from "react-native-chart-kit";
 const AnalyticsBarChart = ({values,monthYear}) => {
   var dictionary = {"shopping":0,"entertainment":0,"bank":0,"income":0,"expense":0,"investment":0,"other":0};

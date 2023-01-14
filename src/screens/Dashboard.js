@@ -12,7 +12,7 @@ const config = require("../../config");
 
 export default function Dashboard({ navigation, route }) {
   const webviewRef = useRef(null);
-  const redirect_url = config.server_url + "/";
+  const redirect_url = config.server_url + "/redirect";
 
   const onNavigation = (navState) => {
     console.log(navState)
