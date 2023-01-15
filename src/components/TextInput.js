@@ -24,11 +24,13 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: theme.colors.surface,
+    fontFamily: 'noteFontEnglish',
   },
   description: {
     fontSize: 13,
     color: theme.colors.secondary,
     paddingTop: 8,
+    fontFamily: 'noteFontEnglish',
   },
   error: {
     fontSize: 13,

@@ -1,0 +1,32 @@
+{
+    "translation": {
+        "Profile": "சுயவிவரம்",
+        "Transactions": "பரிவர்த்தனைகள்",
+        "Equities": "பங்குகள்",
+        "Mutual Funds": "பரஸ்பர நிதி",
+        "Dhanam": "஧னம்",
+        "Angris": "அங்க்ரிஸ்",
+        "All Accounts": "அனைத்து கணக்குகள்",
+        "Allow access in Account Aggregator": "கணக்கு ஏக்கரேட்டரில் அணுகலை அனுமதிக்கவும்",
+        "Support": "ஆதரவு",
+        "Logout": "வெளியேறு",
+        "Login": "உள் நுழைவு",
+        "Accounts": "கணக்குகள்",
+        "Analytics": "விரிவாக்கல்",
+        "Holdings": "உருவாக்கல்",
+        "Provide Access": "அணுகலை வழங்கவும்",
+        "Mobile Number": "கைபேசி எண்",
+        "Enter 4 Digit PIN": "4 எண்ணிக்கை PIN நுழைக",
+        "New here ? Click here to signup": "புதியவை? பதிவு செய்வதற்கு இங்கு சொடுக்கவும்",
+        "Set 4 Digit PIN": "4 எண்ணிக்கை PIN அமைக்க",
+        "Confirm 4 Digit PIN": "4 எண்ணிக்கை PIN உறுதிப்படுத்தவும்",
+        "Create Account": "கணக்கை உருவாக்கு",
+        "Existing User ? Click here to login": "ஏற்கனவே பயனர்? உள்நுழைவதற்கு இங்கு சொடுக்கவும்",
+        "LOGIN": "உள்நுழைவு",
+        "CREATE ACCOUNT": "கணக்கை உருவாக்கு",
+        "Personal Finance": "தனிப்பட்ட வர்த்தகம்",
+        "Note : Ensure that you have given access in AA": "குறிப்பு: AA ல் அணுகலை வழங்கியுள்ளதை உறுதிப்படுத்துக",
+        "Click here to logout and use a differnet number": "வேறு எண்ணை பயன்படுத்துவதற்கு வெளியேறுவதற்கு இங்கு சொடுக்கவும்",
+        "Provide access to your financial data so we can help you manage your budget and finances": "உங்கள் வர்த்தக தரவை அணுகல் வழங்கவும் எங்கள் உங்கள் பட்டியலை மேலாண்மையாக்க உதவலாம்"
+    }
+}

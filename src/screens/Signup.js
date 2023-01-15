@@ -7,16 +7,16 @@ import Toast from "../components/Toast";
 import TextInput from "../components/TextInput";
 import PinField from "../components/PinField";
 import RedirectLink from "../components/RedirectLink";
-import { ActivityIndicator, Linking } from "react-native";
 import { numberValidator } from "../helpers/numberValidator";
 import { Keyboard } from 'react-native';
 import { storeSession,isSessionSet } from "../helpers/sessionHandler";
 import LoadingScreen from "../components/LoadingScreen";
-
+import { useTranslation } from "react-i18next";
 
 const config = require("../../config");
 
 export default function Signup({ navigation }) {
+    const {t, i18n} = useTranslation();
     const [number, setNumber] = useState("");
     const [pin, setPin] = useState("");
     const [repin, setRepin] = useState("");
@@ -112,9 +112,9 @@ export default function Signup({ navigation }) {
   return (
     <Background>
     <Logo />
-    <Header>Create Account</Header>
+    <Header>{t('Create Account')}</Header>
     <TextInput
-      label="Mobile number"
+      label={t("Mobile Number")}
       returnKeyType="next"
       value={number}
       onChangeText={(text) => setNumber(text)}
@@ -125,21 +125,21 @@ export default function Signup({ navigation }) {
     <PinField
       onChange={text => setPin(text)}
       value={pin}
-      description={`Set 4 Digit Pin`}
+      description={t(`Set 4 Digit PIN`)}
       keyboardType="number-pad"
     />
     <PinField
       onChange={text => setRepin(text)}
       value={repin}
-      description={`Re-Enter 4 Digit Pin`}
+      description={t(`Confirm 4 Digit PIN`)}
       keyboardType="number-pad"
     />
     <Button mode="contained" onPress={doSignup}>
-      Create Account
+      {t('Create Account')}
     </Button>
     <RedirectLink 
       toPage="Login"
-      linkText="Existing user ? Click here to login"
+      linkText={t("Existing User ? Click here to login")}
     />
     {showToast && (<Toast message= {toastMsg.message} type={toastMsg.type} />)}
     {/* {isLoading ? <ActivityIndicator size="large" color="#0000ff" /> : null} */}

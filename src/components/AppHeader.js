@@ -1,7 +1,9 @@
 import React,{useState} from 'react';
 import { View, Text, StatusBar, StyleSheet } from 'react-native';
 import { theme } from '../core/theme'
+import { useTranslation } from 'react-i18next';
 const AppHeader = ({ title,subNav,children,routes }) => {
+  const {t, i18n} = useTranslation();
 
     return (
     <View style={styles.container}>
@@ -9,7 +11,7 @@ const AppHeader = ({ title,subNav,children,routes }) => {
       justifyContent: 'space-between',
       width: "100%"}}>
         <StatusBar backgroundColor= {theme.colors.background} />
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{t(title)}</Text>
       </View>
       {children}
     </View>

@@ -1,10 +1,12 @@
 import React from 'react'
 import { Image, StyleSheet,Text } from 'react-native'
-
+import { useTranslation } from 'react-i18next'
 export default function FetchLoader() {
+  const {t, i18n} = useTranslation();
+
             return<>
         <Image source={require('../assets/onstart-loading.gif')} style={styles.image} />
-        <Text style={styles.note}>Note : Ensure that you have given access in AA</Text>
+        <Text style={styles.note}>{t('Note : Ensure that you have given access in AA')}</Text>
         </> 
       
 }

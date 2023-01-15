@@ -1,16 +1,18 @@
 import React from 'react';
 import { View, Text, Image, StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
 import { theme } from '../core/theme'
-
+import { useTranslation } from 'react-i18next';
 const BackButton = ({ title, onPress, children }) => {
-    return (
+  const {t, i18n} = useTranslation();
+  
+  return (
       <View style={styles.container}>
         <StatusBar backgroundColor= {theme.colors.background} />
         <View style={{ flexDirection: 'row',  width: "100%" }}>
           <TouchableOpacity onPress={onPress}>
             <Image source={require('../assets/arrow_back.png')} style={styles.backButton} />
           </TouchableOpacity>
-          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.title}>{t(title)}</Text>
         </View>
         {children}
       </View>

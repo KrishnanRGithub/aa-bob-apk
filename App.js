@@ -3,9 +3,10 @@ import { Provider } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { theme } from "./src/core/theme";
-import { StartScreen, Complete, Dashboard, Login, Signup, Logout,NameScreen} from "./src/screens";
+import { StartScreen, Complete, Dashboard, Login, Signup, Logout} from "./src/screens";
 import { Profile, Equities, Transaction, MutualFund,AccountDetails } from "./src/screens";
 import {useFonts} from 'expo-font';
+import './src/texts/i18n';
 const Stack = createStackNavigator();
 
 export default function App() {

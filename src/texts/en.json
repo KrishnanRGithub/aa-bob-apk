@@ -1,0 +1,32 @@
+{
+    "translation": {
+        "Profile": "Profile",
+        "Transactions": "Transactions",
+        "Equities": "Equities",
+        "Mutual Funds": "Mutual Funds",
+        "Dhanam": "Dhanam",
+        "Angris": "Angris",
+        "All Accounts": "All Accounts",
+        "Allow access in Account Aggregator": "Allow access in Account Aggregator",
+        "Support": "Support",
+        "Logout": "Logout",
+        "Login": "Login",
+        "Accounts": "Accounts",
+        "Analytics": "Analytics",
+        "Holdings": "Holdings",
+        "Provide Access": "Provide Access",
+        "Mobile Number": "Mobile Number",
+        "Enter 4 Digit PIN": "Enter 4 Digit PIN",
+        "New here ? Click here to signup": "New here ? Click here to signup",
+        "Set 4 Digit PIN": "Set 4 Digit PIN",
+        "Confirm 4 Digit PIN": "Confirm 4 Digit PIN",
+        "Create Account": "Create Account",
+        "Existing User ? Click here to login": "Existing User ? Click here to login",
+        "LOGIN": "LOGIN",
+        "CREATE ACCOUNT": "CREATE ACCOUNT",
+        "Personal Finance": "PERSONAL FINANCE",
+        "Note : Ensure that you have given access in AA": "Note : Ensure that you have given access in AA",
+        "Click here to logout and use a differnet number": "Click here to logout and use a differnet number",
+        "Provide access to your financial data so we can help you manage your budget and finances": "Provide access to your financial data so we can help you manage your budget and finances"
+    }
+}

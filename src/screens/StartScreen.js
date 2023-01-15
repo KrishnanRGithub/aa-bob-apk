@@ -5,13 +5,12 @@ import Header from "../components/Header";
 import Button from "../components/Button";
 import Paragraph from "../components/Paragraph";
 import TextInput from "../components/TextInput";
-import { ActivityIndicator } from "react-native";
 import { numberValidator } from "../helpers/numberValidator";
 import { StyleSheet } from 'react-native';
 import RedirectLink from "../components/RedirectLink";
 import { storeSession,getSession,clearSession } from "../helpers/sessionHandler";
 import LoadingScreen from "../components/LoadingScreen";
-
+import { useTranslation } from "react-i18next";
 
 const config = require("../../config");
 const styles = StyleSheet.create({
@@ -28,6 +27,7 @@ export default function StartScreen({ navigation }) {
   // clearSession("user").then(()=>{
   //   pass=1
   // })
+  const {t, i18n} = useTranslation();
   const [number, setNumber] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [renderPage, setRenderPage] = useState(false);
@@ -129,13 +129,12 @@ export default function StartScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>Personal Finance</Header>
+      <Header>{t('Personal Finance')}</Header>
       <Paragraph>
-        Provide access to your financial data so we can help you manage your
-        budget and finances.
+        {t("Provide access to your financial data so we can help you manage your budget and finances")}
       </Paragraph>
       <TextInput
-        label="Mobile number"
+        label={t("Mobile Number")}
         returnKeyType="next"
         value={number}
         onChangeText={(text) => setNumber(text)}
@@ -144,11 +143,11 @@ export default function StartScreen({ navigation }) {
         style={styles.unedit}
       />
       <Button mode="contained" onPress={getURL}>
-        Provide Access
+        {t("Provide Access")}
       </Button>
       <RedirectLink 
         toPage="Logout"
-        linkText="Click here to logout and use a differnet number"
+        linkText={t("Click here to logout and use a differnet number")}
       />
       {/* {isLoading ? <ActivityIndicator size="large" color="#0000ff" /> : null} */}
     </Background>

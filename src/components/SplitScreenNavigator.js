@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { theme } from '../core/theme';
+import { useTranslation } from 'react-i18next';
 const SplitScreenNavigator = ({ routes,activeRoute,setActiveRoute }) => {
   const [activeIndex, setActiveIndex] = useState(activeRoute);
+  const {t, i18n} = useTranslation();
+
   useEffect(() => {
     // navigation.navigate(routes[activeIndex]['path'])
     setActiveRoute(activeIndex);
@@ -17,7 +20,7 @@ const SplitScreenNavigator = ({ routes,activeRoute,setActiveRoute }) => {
             style={[styles.header, index === activeIndex ? styles.activeHeader : {}]}
             onPress={() => setActiveIndex(index)}
           >
-            <Text style={[styles.headerText, index === activeIndex ? styles.activeHeaderText : {}]}>{route.title}</Text>
+            <Text style={[styles.headerText, index === activeIndex ? styles.activeHeaderText : {}]}>{t(route.title)}</Text>
           </TouchableOpacity>
         ))}
       </View>

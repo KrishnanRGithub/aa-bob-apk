@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import { useTranslation } from 'react-i18next';
 const ListButton = ({ item, onPress }) => {
+  const {t, i18n} = useTranslation();
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.item}>
-        <Text style={styles.text}>{item.text}</Text>
+        <Text style={styles.text}>{t(item.text)}</Text>
         <Icon name={item.icon} size={24} color="#000" /> 
       </View>
     </TouchableOpacity>

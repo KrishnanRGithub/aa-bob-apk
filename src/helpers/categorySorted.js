@@ -6,7 +6,11 @@
     const dictionary = {"shopping":0,"entertainment":0,"bank":0,"income":0,"expense":0,"investment":0,"other":0};
   
     transactions.forEach(transaction => {
+      if(transaction.type == "CREDIT"){
+        dictionary["income"]+=parseFloat(transaction.amount);
+      }else{
         dictionary[classifyCategories(transaction.categoryCode)]+=parseFloat(transaction.amount);
+      }
     });
 
     return dictionary;

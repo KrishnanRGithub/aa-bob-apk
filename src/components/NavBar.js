@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon5 from 'react-native-vector-icons/FontAwesome5';
 import { theme } from '../core/theme'
-
+import { useTranslation } from 'react-i18next';
 import MutualFundScreen from '../screens/tab/MutualFund';
 import EquitiesScreen from '../screens/tab/Equities';
 import ProfileScreen from '../screens/tab/Profile';
@@ -14,7 +14,7 @@ import TransactionScreen from '../screens/tab/Transaction';
 const Tab = createBottomTabNavigator();
 
 const NavBar = () => {
-
+  const {t, i18n} = useTranslation();
   return (
       <Tab.Navigator
 
@@ -48,67 +48,45 @@ screenOptions={{
         marginBottom: 3,         
      },
   }}
-        // tabBarOptions={{
-        //     // screenOptions={{
-        //   labelStyle: {
-        //     fontSize: 12,
-        //     fontWeight: 'bold',
-        //     // padding: 10,         
-        //   },
-        //   tabStyle: {
-        //     // marginBottom:20,
-        //     // padding: 10,
-        //   },
-        //   style: {
-        //     shadowColor: 'black', // add shadow to the tab navigator
-        //     shadowOffset: { width: 0, height: 2 },
-        //     shadowOpacity: 0.2,
-        //     shadowRadius: 2,
-        //     backgroundColor: 'white',
-        //     borderTopWidth: 1,
-        //     borderTopColor: 'lightgray',
-        //     // margin:10
-        //   },
-        // }}
       >
          <Tab.Screen
-          name="Profile"
+          name={"Profile"}
           component={ProfileScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon5 name="user-alt" color={color} size={size} />
             ),
-            tabBarLabel: 'Profile',
+            tabBarLabel: t('Profile'),
           }}
         />
         <Tab.Screen
-          name="Transactions"
+          name={"Transactions"}
           component={TransactionScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
                   <Icon name="bank" color={color} size={size} />
             ),
-            tabBarLabel: 'Transactions',
+            tabBarLabel: t('Transactions'),
           }}
         />
         <Tab.Screen
-          name="Mutual Funds"
+          name={"Mutual Funds"}
           component={MutualFundScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon5 name="coins" color={color} size={size} />
             ),
-            tabBarLabel: 'Mutual  Funds',
+            tabBarLabel: t('Mutual Funds'),
           }}
         />
         <Tab.Screen
-          name="Equities"
+          name={"Equities"}
           component={EquitiesScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="suitcase" color={color} size={size} />
             ),
-            tabBarLabel: 'Equities',
+            tabBarLabel: t('Equities'),
           }}
         />
       </Tab.Navigator>

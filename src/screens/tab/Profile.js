@@ -5,10 +5,9 @@ import { getSession } from "../../helpers/sessionHandler";
 import AppScreen from "../../components/AppScreen";
 import Footer from "../../components/Footer";
 import InfoText from "../../components/InfoText";
+
 export default function Profile({ navigation }) {
   const [userDetails,setUserDetails] = useState(null);
-
-
   useEffect(() => {
     getSession("user").then((val) => {
       setUserDetails(val);

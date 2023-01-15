@@ -45,12 +45,14 @@ const styles = StyleSheet.create({
     },
     description: {
       marginBottom: 3,
+      fontFamily: 'noteFontEnglish',
     },
     inputContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       width: "100%",
       marginBottom: 10,
+      fontFamily: 'noteFontEnglish',
     },
     input: {
       height: 50,

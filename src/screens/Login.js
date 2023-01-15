@@ -8,11 +8,10 @@ import TextInput from "../components/TextInput";
 import PinField from "../components/PinField";
 import RedirectLink from "../components/RedirectLink";
 import LoadingScreen from "../components/LoadingScreen";
-import { ActivityIndicator, Linking } from "react-native";
 import { numberValidator } from "../helpers/numberValidator";
 import { Keyboard } from 'react-native';
 import { storeSession,isSessionSet, getSession } from "../helpers/sessionHandler";
-
+import { useTranslation } from "react-i18next";
 const config = require("../../config");
 
 export default Login = ({ navigation }) => {
@@ -21,6 +20,7 @@ export default Login = ({ navigation }) => {
   //   if (val){
   //      console.log(val)
   //   }})
+    const {t, i18n} = useTranslation();
 
     const [number, setNumber] = useState("");
     const [pin, setPin] = useState("");
@@ -110,9 +110,9 @@ export default Login = ({ navigation }) => {
   return (
     <Background>
       <Logo />
-      <Header>Login</Header>
+      <Header>{t('Login')}</Header>
       <TextInput
-        label="Mobile number"
+        label={t("Mobile Number")}
         returnKeyType="next"
         value={number}
         onChangeText={(text) => setNumber(text)}
@@ -121,16 +121,15 @@ export default Login = ({ navigation }) => {
       <PinField
         onChange={text => setPin(text)}
         value={pin}
-        // description={`4 Digit\nPin`}
-        description={`Enter 4 Digit Pin`}
+        description={t(`Enter 4 Digit PIN`)}
         keyboardType="number-pad"
       />
       <Button mode="contained" onPress={doLogin}>
-        Login
+      {t('Login')}
       </Button>
       <RedirectLink 
         toPage="Signup"
-        linkText="New here ? Click here to signup"
+        linkText={t("New here ? Click here to signup")}
       />
       {showToast && (<Toast message= {toastMsg.message} type={toastMsg.type} />)}
     </Background>
