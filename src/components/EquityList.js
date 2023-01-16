@@ -12,26 +12,34 @@ const EquityList = (prop) => {
     ratio=ratio*100;
     ratio=ratio.toFixed(2);
     var ratioColor="black";
+    var ratio2="";
     if(ratio>0){
-        ratio="+"+ratio.toString()+"%";
+        ratio2="+"+ratio.toString()+"%";
         ratioColor="green";
     }else{
-        ratio=ratio.toString()+"%";
+        ratio2=ratio.toString()+"%";
         ratioColor="maroon";
     }
-    
+    let diffGain = (parseFloat(prop.rate)*parseFloat(prop.units))*(ratio/100)
+    if(diffGain>0){
+        diffGain="+"+diffGain.toFixed(2).toString();
+    }else{
+        diffGain=diffGain.toFixed(2).toString();
+    }
     return (
     <View style={styles.cellContainer}>
       <View style={styles.textContainer}>
         <View>
+            <Text style={styles.unitText}>{prop.units+" Qty · Avg "+prop.rate}</Text>
             <Text style={styles.nameText}>{prop.issuerName}</Text>
-            <Text style={{...styles.ratioText,color:ratioColor}}>{ratio}</Text>
+            <Text style={styles.unitText}>{"Invested "+parseFloat(prop.rate)*parseFloat(prop.units)}</Text>
         </View>
         {/* <Text style={styles.dateText}>{prop.dateOfInvestment}</Text> */}
       </View>
       <View style={styles.rateContainer}>
-      <Text  style={styles.amountText}>{"₹"+parseFloat(prop.rate)*parseFloat(prop.units)}</Text>
-        <Text style={styles.unitText}>{prop.units+" units"}</Text>
+      <Text style={{...styles.ratioText,color:ratioColor,alignSelf:"flex-end"}}>{ratio2}</Text>
+        <Text  style={{...styles.amountText,color:ratioColor}}>{diffGain}</Text>
+        <Text style={{...styles.unitText,alignSelf:"flex-end"}}>{"LTP "+parseFloat(prop.lastTradedPrice)}</Text>
       </View>
     </View>
   );
@@ -61,7 +69,7 @@ const styles = StyleSheet.create({
     fontFamily:"headFontEnglish"
   },
   ratioText: {
-    fontSize: 16,
+    fontSize: 12,
     fontWeight: 'bold',
 },
   dateText: {
@@ -71,7 +79,6 @@ const styles = StyleSheet.create({
   unitText: {
     fontSize: 14,
     color: 'gray',
-    textAlign:"right",
     fontFamily:"noteFontEnglish"
 },
   timeText: {

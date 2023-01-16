@@ -23,19 +23,23 @@ const EquityHistoryList = (prop) => {
     }else if (prop.type=="SELL"){
       colorType="green";
     }
+    var temp =prop.type
+    if(prop.equityCategory!="EQUITY"){
+      temp = prop.type+" | "+prop.instrumentType+"  "+prop.optionType;
+    }
     return (
     <View style={styles.cellContainer}>
       <View style={styles.textContainer}>
         <View>
-            <Text style={styles.nameText}>{prop.symbol+" "+prop.exchange}</Text>
-            <Text style={[{...styles.typeText,color:colorType}]}>{prop.type}</Text>
+            <Text style={styles.nameText}>{prop.symbol+" | "+prop.exchange}</Text>
+            <Text style={[{...styles.typeText,color:colorType}]}>{temp}</Text>
             <Text style={styles.dateText}>{prop.dateOfTransaction}</Text>
 
         </View>
       </View>
       <View style={styles.rateContainer}>
-      <Text  style={styles.amountText}>{"₹"+prop.rate}</Text>
-        <Text style={styles.unitText}>{prop.units+" units"}</Text>
+      <Text  style={styles.amountText}>{prop.tradeValue}</Text>
+        <Text style={styles.unitText}>{prop.units+" Qty · "+prop.rate}</Text>
 
       </View>
     </View>
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
   typeText: {
     fontFamily:"headFontEnglish",
     fontSize: 16,
-    // fontWeight: 'bold',
+    fontWeight: '800',
 },
   dateText: {
     fontSize: 14,
@@ -85,6 +89,7 @@ const styles = StyleSheet.create({
   },
   amountText: {
     // fontWeight:"bold",
+    alignSelf:"flex-end",
     fontSize: 18,
     fontFamily:"headFontEnglish"
   },

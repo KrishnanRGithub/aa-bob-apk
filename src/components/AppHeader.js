@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     // fontWeight: 'bold',
     color: theme.colors.primary,
     marginLeft: 10,
+    fontWeight:"600"
   }
 });
 

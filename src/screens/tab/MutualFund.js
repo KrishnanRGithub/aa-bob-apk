@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import { fetchDataFI,storeMutualFund } from "../../helpers/dataStore";
 import FetchLoader from "../../components/FetchLoader";
 import { getSession } from "../../helpers/sessionHandler";
+import MutualFundHistory from "../../components/MutualFundHistory";
 import MutualFundList from "../../components/MutualFundList";
 import AppScreen from "../../components/AppScreen";
 import { FlatList } from "react-native";
 export default function MutualFund({ navigation }) {
 
   const [mf, setMF] = useState(null);
+  const [mfHistory, setMFHistory] = useState(null);
   const [userDetails,setUserDetails] = useState(null);
+  const [activeScreen,setActiveScreen] = useState(0);
 
   useEffect(() => {
     getSession("user").then((val) => {
@@ -22,8 +25,9 @@ export default function MutualFund({ navigation }) {
       let data =await fetchDataFI(userDetails['mobile'],"mutualfund")
       console.log(data)
       console.log("Setting MF in EPage")
-      setMF(data.data.all);
-      storeMutualFund(data.data.all)  
+      setMF(data.data.summary);
+      setMFHistory(data.data.all);
+      storeMutualFund(data.data.summary)  
     }
     catch(err){
       console.log(err);
@@ -38,20 +42,28 @@ export default function MutualFund({ navigation }) {
 
   return (
 
-    <AppScreen prop={{onRefresh:()=>{refreshMF()},title:"Mutual Funds",routes:null}}>
-              {mf==null?<FetchLoader></FetchLoader>:null}  
-              <FlatList
-          data={mf}
+    <AppScreen prop={{onRefresh:()=>{refreshMF()},title:"Mutual Funds",routes:[{"title":"Holdings"},{"title":"Transactions"}],activeRoute:activeScreen,setActiveRoute:setActiveScreen}}>
+              {mfHistory==null?<FetchLoader></FetchLoader>:null}  
+              {activeScreen==0?<FlatList
+                  data={mf}
+                  renderItem={({ item, index }) => (
+                    <MutualFundList key={index} prop={item}></MutualFundList>
+                  )}
+                  keyExtractor={(item, index) => index.toString()}
+                />
+              :null}
+              {activeScreen==1?<FlatList
+          data={mfHistory}
           renderItem={({ item, index }) => (
-            <MutualFundList key={index} prop={item}></MutualFundList>
+            <MutualFundHistory key={index} prop={item}></MutualFundHistory>
           )}
           keyExtractor={(item, index) => index.toString()}
-        />
+        />:null}
             {/* {mf && mf.map((i, index) => (
-                        <MutualFundList
+                        <MutualFundHistory
                         key={index}
                         prop={i}
-                        ></MutualFundList>
+                        ></MutualFundHistory>
                     ))} */}
     </AppScreen>
   );

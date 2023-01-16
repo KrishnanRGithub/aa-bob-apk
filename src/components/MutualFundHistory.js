@@ -8,7 +8,7 @@ import React,{useState} from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import * as All  from './Icon';
 
-const MutualFundList = (prop) => {
+const MutualFundHistory = (prop) => {
 
     prop=prop.prop;
     
@@ -22,9 +22,16 @@ const MutualFundList = (prop) => {
     return (
     <View style={styles.cellContainer}>
       <View style={styles.textContainer}>
-        <Text style={styles.nameText}>{prop.amc}</Text>
-        <Text style={styles.dateText}>{prop.isin}</Text>
-        <Text style={styles.dateText}>{prop.closingUnits}</Text>
+        <View>
+            <Text style={styles.nameText}>{prop.amc}</Text>
+        </View>
+        <Text style={{...styles.dateText, fontWeight:"700"}}>{"Closing : "+prop.closingUnits+" units"}</Text>
+        <Text style={{...styles.dateText, fontWeight:"500"}}>{prop.navDate}</Text>
+      </View>
+      <View style={styles.rateContainer}>
+      <Text  style={styles.amountText}>{"₹"+prop.amount}</Text>
+      <Text style={{...styles.typeText,color:typeColor, fontWeight:"900", alignSelf:"flex-end"}}>{prop.type}</Text>
+
       </View>
     </View>
   );
@@ -74,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MutualFundList;
+export default MutualFundHistory;
