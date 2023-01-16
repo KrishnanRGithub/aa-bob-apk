@@ -35,10 +35,10 @@ export default function Profile({ navigation }) {
               item={{text:"Allow Access",icon:"sync"}} 
               onPress={async ()=>{await removeAAUserIdFromSession();  navigation.navigate("StartScreen"); }} 
             />    
-                             <ListButton 
+                             {/* <ListButton 
               item={{text:"Support",icon:"support-agent"}} 
               onPress={()=>{console.log("Support")}} 
-            /> 
+            />  */}
           <LanguagePicker/>
           <ListButton 
               item={{text:"Logout",icon:"logout"}} 
