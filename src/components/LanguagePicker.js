@@ -5,7 +5,6 @@ import {useTranslation} from 'react-i18next';
 
 const LanguagePicker = ({ options=['English', 'हिंदी', 'தமிழ்'], onValueChange=null }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(options[0]);
   const {t, i18n} = useTranslation();
   
 const [currentLanguage,setLanguage] =useState('en');
@@ -21,6 +20,12 @@ const changeLanguage = value => {
     "हिंदी": "hi",
     "தமிழ்": "ta"
   }
+  const langMapInvert={
+    "en":"English",
+    "hi":"हिंदी",
+    "ta":"தமிழ்"
+  }
+  const [selectedValue, setSelectedValue] = useState(langMapInvert[i18n.language]);
   if(onValueChange==null){
     onValueChange=(itemValue)=>{
       console.log("itemValue",itemValue)

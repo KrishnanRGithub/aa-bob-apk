@@ -1,5 +1,6 @@
 {
     "translation": {
+        "Home": "முகப்புப்பக்கம்",
         "Profile": "சுயவிவரம்",
         "Transactions": "பரிவர்த்தனைகள்",
         "Equities": "பங்குகள்",
@@ -25,7 +26,7 @@
         "LOGIN": "உள்நுழைவு",
         "CREATE ACCOUNT": "கணக்கை உருவாக்கு",
         "Personal Finance": "தனிப்பட்ட வர்த்தகம்",
-        "Note : Ensure that you have given access in AA": "குறிப்பு: AA ல் அணுகலை வழங்கியுள்ளதை உறுதிப்படுத்துக",
+        "Note : Ensure that you have given access": "குறிப்பு: அணுகலை வழங்கியுள்ளதை உறுதிப்படுத்துக",
         "Click here to logout and use a differnet number": "வேறு எண்ணை பயன்படுத்துவதற்கு வெளியேறுவதற்கு இங்கு சொடுக்கவும்",
         "Provide access to your financial data so we can help you manage your budget and finances": "உங்கள் வர்த்தக தரவை அணுகல் வழங்கவும் எங்கள் உங்கள் பட்டியலை மேலாண்மையாக்க உதவலாம்"
     }

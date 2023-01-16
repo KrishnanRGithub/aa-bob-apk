@@ -1,5 +1,6 @@
 {
     "translation": {
+        "Home": "Home",
         "Profile": "Profile",
         "Transactions": "Transactions",
         "Equities": "Equities",
@@ -25,7 +26,7 @@
         "LOGIN": "LOGIN",
         "CREATE ACCOUNT": "CREATE ACCOUNT",
         "Personal Finance": "PERSONAL FINANCE",
-        "Note : Ensure that you have given access in AA": "Note : Ensure that you have given access in AA",
+        "Note : Ensure that you have given access": "Note : Ensure that you have given access",
         "Click here to logout and use a differnet number": "Click here to logout and use a differnet number",
         "Provide access to your financial data so we can help you manage your budget and finances": "Provide access to your financial data so we can help you manage your budget and finances"
     }

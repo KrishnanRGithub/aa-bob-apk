@@ -1,5 +1,6 @@
 {
     "translation": {
+        "Home": "मुख्य पृष्ठ",
         "Profile": "प्रोफाइल",
         "Transactions": "लेनदेन",
         "Equities": "संपत्तियाँ",
@@ -25,7 +26,7 @@
         "LOGIN": "लॉग इन",
         "CREATE ACCOUNT": "खाता बनाएं",
         "Personal Finance": "व्यक्तिगत वित्त",
-        "Note : Ensure that you have given access in AA": "नोट : सुनिश्चित करें कि आपने AA में पहुंच की अनुमति दी है",
+        "Note : Ensure that you have given access": "नोट : सुनिश्चित करें कि आपने AA में पहुंच की अनुमति दी है",
         "Click here to logout and use a differnet number": "अलग नंबर का उपयोग करने के लिए लॉग आउट करने के लिए यहां क्लिक करें",
         "Provide access to your financial data so we can help you manage your budget and finances": "आपके वित्तीय डेटा को पहुंच प्रदान करें ताकि हम आपको आपके बजट और वित्तों को प्रबंधित करने में मदद कर सकें"
     }

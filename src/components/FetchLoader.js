@@ -6,7 +6,7 @@ export default function FetchLoader() {
 
             return<>
         <Image source={require('../assets/onstart-loading.gif')} style={styles.image} />
-        <Text style={styles.note}>{t('Note : Ensure that you have given access in AA')}</Text>
+        <Text style={styles.note}>{t('Note : Ensure that you have given access')}</Text>
         </> 
       
 }

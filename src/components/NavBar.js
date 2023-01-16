@@ -17,7 +17,6 @@ const NavBar = () => {
   const {t, i18n} = useTranslation();
   return (
       <Tab.Navigator
-
 screenOptions={{
     headerShown:false,
     tabBarShowLabel: true,
@@ -25,14 +24,17 @@ screenOptions={{
       paddingBottom:7,
       paddingTop:5,
       height:65,
-      // borderTopColor: 'orange',
+      justifyContent:"space-between",
+      width:"100%",
+      alignItems: "center",
+      justifyContent: "center",
       backgroundColor: theme.colors.background,
     },
     labelStyle: {
         fontSize: 14,
         marginBottom: 10,
-      fontFamily: 'noteFontEnglish',
-
+      fontFamily: 'titleFontEnglish',
+      fontWeight: '700',
         activeTintColor: "red",
         inactiveTintColor: "gray",    
     },
@@ -42,21 +44,20 @@ screenOptions={{
     inactiveTintColor: "gray",
     labelStyle: {
        fontSize:11,
-      fontFamily: 'noteFontEnglish',
-
-        fontWeight: 'bold',
-        marginBottom: 3,         
+       fontFamily: 'titleFontEnglish',
+       fontWeight: '800',
+       marginBottom: 2, 
      },
   }}
       >
-         <Tab.Screen
-          name={"Profile"}
-          component={ProfileScreen}
+      <Tab.Screen
+          name={"Equities"}
+          component={EquitiesScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Icon5 name="user-alt" color={color} size={size} />
+              <Icon name="suitcase" color={color} size={30} />
             ),
-            tabBarLabel: t('Profile'),
+            tabBarLabel: t('Equities'),
           }}
         />
         <Tab.Screen
@@ -64,9 +65,19 @@ screenOptions={{
           component={TransactionScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-                  <Icon name="bank" color={color} size={size} />
+                  <Icon name="bank" color={color} size={30} />
             ),
             tabBarLabel: t('Transactions'),
+          }}
+        />      
+        <Tab.Screen
+          name={"Home"}
+          component={ProfileScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Icon name="home" color={color} size={37} />
+            ),
+            tabBarLabel: t('Home'),
           }}
         />
         <Tab.Screen
@@ -74,22 +85,23 @@ screenOptions={{
           component={MutualFundScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Icon5 name="coins" color={color} size={size} />
+              <Icon5 name="coins" color={color} size={30} />
             ),
             tabBarLabel: t('Mutual Funds'),
           }}
         />
         <Tab.Screen
-          name={"Equities"}
-          component={EquitiesScreen}
+          name={"Profile"}
+          component={ProfileScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Icon name="suitcase" color={color} size={size} />
+              <Icon5 name="user-alt" color={color} size={30} />
             ),
-            tabBarLabel: t('Equities'),
+            tabBarLabel: t('Profile'),
           }}
         />
       </Tab.Navigator>
+      
   );
         
 };

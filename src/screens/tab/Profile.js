@@ -32,7 +32,7 @@ export default function Profile({ navigation }) {
               onPress={()=>{navigation.navigate("AccountDetails");}} 
             /> 
         <ListButton 
-              item={{text:"Allow access in Account Aggregator",icon:"sync"}} 
+              item={{text:"Allow Access",icon:"sync"}} 
               onPress={async ()=>{await removeAAUserIdFromSession();  navigation.navigate("StartScreen"); }} 
             />    
                              <ListButton 
