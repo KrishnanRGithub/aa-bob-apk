@@ -1,13 +1,16 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, KeyboardAvoidingView } from 'react-native'
+import { ImageBackground, StyleSheet,View, KeyboardAvoidingView } from 'react-native'
 import { theme } from '../core/theme'
-
+import LanguagePicker from './LanguagePicker'
 export default function Background({ children }) {
   return (
     <ImageBackground
       resizeMode="repeat"
       style={styles.background}
     >
+      <View style={{top:5,width:180}}>
+        <LanguagePicker/>
+      </View>
       <KeyboardAvoidingView style={styles.container} behavior="padding">
         {children}
       </KeyboardAvoidingView>

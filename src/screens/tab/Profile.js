@@ -5,7 +5,7 @@ import { getSession } from "../../helpers/sessionHandler";
 import AppScreen from "../../components/AppScreen";
 import Footer from "../../components/Footer";
 import InfoText from "../../components/InfoText";
-
+import LanguagePicker from "../../components/LanguagePicker";
 export default function Profile({ navigation }) {
   const [userDetails,setUserDetails] = useState(null);
   useEffect(() => {
@@ -39,11 +39,11 @@ export default function Profile({ navigation }) {
               item={{text:"Support",icon:"support-agent"}} 
               onPress={()=>{console.log("Support")}} 
             /> 
+          <LanguagePicker/>
           <ListButton 
               item={{text:"Logout",icon:"logout"}} 
               onPress={()=>{signoutSession(); navigation.navigate("Login");}} 
             /> 
-
             {userDetails==null?null:<InfoText text={"User ID  "+userDetails["_id"]}></InfoText>}
             <Footer/>
   </AppScreen>
