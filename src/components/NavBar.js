@@ -1,6 +1,4 @@
 import React from 'react';
-import { View, Text,StyleSheet,TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon5 from 'react-native-vector-icons/FontAwesome5';
@@ -10,14 +8,16 @@ import MutualFundScreen from '../screens/tab/MutualFund';
 import EquitiesScreen from '../screens/tab/Equities';
 import ProfileScreen from '../screens/tab/Profile';
 import TransactionScreen from '../screens/tab/Transaction';
-
+import HomePageScreen from '../screens/tab/HomePage'
 const Tab = createBottomTabNavigator();
 
 const NavBar = () => {
   const {t, i18n} = useTranslation();
   return (
       <Tab.Navigator
+      initialRouteName="Home"
 screenOptions={{
+  initialRouteName:"Home",
     headerShown:false,
     tabBarShowLabel: true,
     tabBarStyle: {
@@ -40,6 +40,7 @@ screenOptions={{
     },
   }}
   tabBarOptions={{
+    initialRouteName:"Home",
     activeTintColor: theme.colors.primary,
     inactiveTintColor: "gray",
     labelStyle: {
@@ -72,7 +73,7 @@ screenOptions={{
         />      
         <Tab.Screen
           name={"Home"}
-          component={ProfileScreen}
+          component={HomePageScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="home" color={color} size={37} />

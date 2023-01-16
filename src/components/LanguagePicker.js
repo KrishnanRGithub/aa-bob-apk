@@ -7,7 +7,7 @@ const LanguagePicker = ({ options=['English', 'हिंदी', 'தமிழ�
   const [isVisible, setIsVisible] = useState(false);
   const {t, i18n} = useTranslation();
   
-const [currentLanguage,setLanguage] =useState('en');
+const [currentLanguage,setLanguage] =useState(i18n.language);
 
 const changeLanguage = value => {
   i18n
@@ -34,7 +34,7 @@ const changeLanguage = value => {
     }
   }
   return (
-    <View    style={{paddingLeft: 4}}    >
+    <View    style={{paddingLeft: 2}}    >
          <Picker
             style={{fontFamily:"noteFontEnglish"}}
             selectedValue={selectedValue}
