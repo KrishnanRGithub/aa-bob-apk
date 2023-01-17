@@ -86,8 +86,9 @@ const styles = StyleSheet.create({
     color: 'gray',
   },
   amountText: {
-    fontWeight:"bold",
     fontSize: 18,
+    fontWeight:"700",
+    // fontFamily:"headFontEnglish"
   },
 });
 

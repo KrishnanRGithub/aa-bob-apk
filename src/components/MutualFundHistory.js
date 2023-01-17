@@ -22,15 +22,15 @@ const MutualFundHistory = (prop) => {
     return (
     <View style={styles.cellContainer}>
       <View style={styles.textContainer}>
-        <View>
+        <View style={{flexDirection:"row"}}>
             <Text style={styles.nameText}>{prop.amc}</Text>
+            <Text style={{...styles.typeText,backgroundColor:typeColor}}>{prop.type}</Text>
         </View>
-        <Text style={{...styles.dateText, fontWeight:"700"}}>{"Closing : "+prop.closingUnits+" units"}</Text>
         <Text style={{...styles.dateText, fontWeight:"500"}}>{prop.navDate}</Text>
       </View>
       <View style={styles.rateContainer}>
       <Text  style={styles.amountText}>{"₹"+prop.amount}</Text>
-      <Text style={{...styles.typeText,color:typeColor, fontWeight:"900", alignSelf:"flex-end"}}>{prop.type}</Text>
+      <Text style={{...styles.dateText, fontWeight:"500"}}>{"Closing : "+prop.closingUnits+" units"}</Text>
 
       </View>
     </View>
@@ -56,28 +56,37 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily:"noteFontEnglish"
   },
   typeText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    marginLeft:5,
+    paddingBottom:0,
+    fontFamily:"noteFontEnglish",
+    color:"white",
+    paddingHorizontal:5,
+    borderRadius:5,
 },
   dateText: {
     fontSize: 14,
     color: 'gray',
+    fontFamily:"noteFontEnglish"
   },
   unitText: {
     fontSize: 14,
     color: 'gray',
     textAlign:"right",
+    fontFamily:"noteFontEnglish"
 },
   timeText: {
     fontSize: 14,
     color: 'gray',
+    fontFamily:"noteFontEnglish"
   },
   amountText: {
-    fontWeight:"bold",
-    fontSize: 18,
+    fontSize: 22,
+    textAlign:"right",
+    fontFamily:"noteFontEnglish"
   },
 });
 

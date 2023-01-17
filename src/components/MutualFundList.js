@@ -11,7 +11,6 @@ import * as All  from './Icon';
 const MutualFundList = (prop) => {
 
     prop=prop.prop;
-    
     var typeColor="orange";
     if(prop.type=="SELL"){
         typeColor="green";
@@ -23,8 +22,12 @@ const MutualFundList = (prop) => {
     <View style={styles.cellContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.nameText}>{prop.amc}</Text>
-        <Text style={styles.dateText}>{prop.isin}</Text>
-        <Text style={styles.dateText}>{prop.closingUnits}</Text>
+        <Text style={styles.isinText}>{prop.isin+" | "+prop.schemeCode}</Text>
+        <Text style={styles.unitText}>{prop.closingUnits} Qty</Text>
+      </View>
+      <View>
+        <Text  style={styles.navText}>NAV.</Text>
+        <Text  style={styles.amountText}>{"₹"+prop.nav}</Text>
       </View>
     </View>
   );
@@ -36,11 +39,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
   },
-  icon: {
-    width: 32,
-    height: 32,
-    marginRight: 16,
-  },
   textContainer: {
     flex: 1,
   },
@@ -49,29 +47,31 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily:"noteFontEnglish"
   },
-  typeText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-},
-  dateText: {
+  isinText: {
     fontSize: 14,
     color: 'gray',
+    fontFamily:"noteFontEnglish"
   },
   unitText: {
     fontSize: 14,
     color: 'gray',
-    textAlign:"right",
-},
-  timeText: {
-    fontSize: 14,
-    color: 'gray',
+    fontFamily:"noteFontEnglish"
   },
   amountText: {
-    fontWeight:"bold",
-    fontSize: 18,
+    fontSize: 28,
+    marginRight:5,
+    fontFamily:"noteFontEnglish"
   },
+  navText:{
+    marginTop:7,
+    marginBottom:-5,
+    textAlign:"right",
+    marginRight:5,
+    fontFamily:"noteFontEnglish",
+    color:"gray"
+  }
 });
 
 export default MutualFundList;

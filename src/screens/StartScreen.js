@@ -131,7 +131,7 @@ export default function StartScreen({ navigation }) {
       <Logo />
       <Header>{t('Personal Finance')}</Header>
       <Paragraph>
-        {t("Provide access to your financial data so we can help you manage your budget and finances")}
+        {t("Provide access to your financial data to get personalised recommendations")}
       </Paragraph>
       <TextInput
         label={t("Mobile Number")}

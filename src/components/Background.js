@@ -8,7 +8,7 @@ export default function Background({ children }) {
       resizeMode="repeat"
       style={styles.background}
     >
-      <View style={{top:5,width:180}}>
+      <View style={{top:35,width:180}}>
         <LanguagePicker/>
       </View>
       <KeyboardAvoidingView style={styles.container} behavior="padding">
