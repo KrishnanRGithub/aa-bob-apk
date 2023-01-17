@@ -145,10 +145,14 @@ export default function StartScreen({ navigation }) {
       <Button mode="contained" onPress={getURL}>
         {t("Provide Access")}
       </Button>
-      <RedirectLink 
+      <Button mode="contained" onPress={ ()=>{ navigation.navigate("Logout")}}>
+        {t("Cancel")}
+      </Button>
+
+      {/* <RedirectLink 
         toPage="Logout"
         linkText={t("Click here to logout and use a differnet number")}
-      />
+      /> */}
       {/* {isLoading ? <ActivityIndicator size="large" color="#0000ff" /> : null} */}
     </Background>
   );

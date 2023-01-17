@@ -6,6 +6,7 @@ import EquityList from "../../components/EquityList";
 import AppScreen from "../../components/AppScreen";
 import { FlatList,Text } from "react-native";
 import EquityHistoryList from "../../components/EquitiyHistoryList";
+import EquitySummary from "../../components/EquitySummary";
 export default function Equities({ navigation }) {
   const [equities, setEquities] = useState(null);
   const [userDetails,setUserDetails] = useState(null);
@@ -41,20 +42,22 @@ export default function Equities({ navigation }) {
   return (
     <AppScreen prop={{onRefresh:()=>{refreshEquities()},title:"Equities",routes:[{"title":"Holdings"},{"title":"Transactions"}],activeRoute:activeScreen,setActiveRoute:setActiveScreen}}>
       {equities==null?<FetchLoader></FetchLoader>:null}  
-      {activeScreen==0?<FlatList
+      {activeScreen==0?<>
+        {equities&&<EquitySummary prop={equities} />}
+        <FlatList
           data={equities}
           renderItem={({ item, index }) => (
             <EquityList key={index} prop={item}></EquityList>
           )}
           keyExtractor={(item, index) => index.toString()}
-        />:null}
-      {activeScreen==1?<FlatList
+        /></>:null}
+      {activeScreen==1?<><FlatList
           data={equityHistory}
           renderItem={({ item, index }) => (
             <EquityHistoryList key={index} prop={item}></EquityHistoryList>
           )}
           keyExtractor={(item, index) => index.toString()}
-        />:null}
+        /></>:null}
 
       {/* {equities && equities.map((i, index) => (
                   <EquityList
