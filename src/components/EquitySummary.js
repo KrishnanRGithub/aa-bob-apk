@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
-
+import { useTranslation } from 'react-i18next';
 
 const EquitySummary = (prop) => {
   prop=prop.prop
+  const {t,i10n}= useTranslation();
   var invested=0
   var current=0
   for( var i in prop){
@@ -32,11 +33,11 @@ const EquitySummary = (prop) => {
     <View style={styles.container}>
     <View style={styles.amountContainer}>
         <View style={styles.dataContainer}>
-            <Text style={{...styles.label}}>Invested</Text>
+            <Text style={{...styles.label}}>{t("Invested")}</Text>
             <Text style={styles.value}>{invested}</Text>
         </View>
         <View style={styles.dataContainer}>
-            <Text style={{...styles.label}}>Current Value</Text>
+            <Text style={{...styles.label}}>{t("Current Value")}</Text>
             <Text style={styles.value}>{current}</Text>
         </View>
     </View>
