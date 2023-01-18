@@ -34,7 +34,7 @@ const changeLanguage = value => {
     }
   }
   return (
-    <View    style={{paddingLeft: 2}}    >
+    <View>
          <Picker
             style={{fontFamily:"noteFontEnglish"}}
             selectedValue={selectedValue}

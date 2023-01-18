@@ -6,6 +6,7 @@ import AppScreen from "../../components/AppScreen";
 import Footer from "../../components/Footer";
 import InfoText from "../../components/InfoText";
 import LanguagePicker from "../../components/LanguagePicker";
+import PersonalInfoCard from "../../components/PersonalInfoCard";
 export default function Profile({ navigation }) {
   const [userDetails,setUserDetails] = useState(null);
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Profile({ navigation }) {
 }
   return (
     <AppScreen prop={{onRefresh:()=>{console.log("Refresh in profile")},title:"Profile", routes:null}} >
+        {userDetails==null?null:<PersonalInfoCard mobile={userDetails["mobile"]}/>}
         <ListButton 
               item={{text:"All Accounts",icon:"account-box"}} 
               onPress={()=>{navigation.navigate("AccountDetails");}} 
@@ -44,7 +46,8 @@ export default function Profile({ navigation }) {
               item={{text:"Logout",icon:"logout"}} 
               onPress={()=>{signoutSession(); navigation.navigate("Login");}} 
             /> 
-            {userDetails==null?null:<InfoText text={"User ID  "+userDetails["_id"]}></InfoText>}
+            {userDetails==null?null:<InfoText text={userDetails["_id"]}></InfoText>}
+            {/* {userDetails==null?null:<InfoText text={userDetails["mobile"]}></InfoText>} */}
             <Footer/>
   </AppScreen>
   );
