@@ -11,4 +11,6 @@ export { default as Equities } from "./tab/Equities";
 export { default as MutualFund } from "./tab/MutualFund";
 export { default as Profile } from "./tab/Profile";
 export { default as Transaction } from "./tab/Transaction";
+export { default as Loans } from "./tab/Loans";
+export { default as Insurance } from "./tab/Insurance";
 export {default as OtpScreen} from "./OtpScreen";
