@@ -102,6 +102,10 @@ export default function Signup({ navigation }) {
 
     };
 
+    const doOtp= async () => {
+      navigation.navigate("OtpScreen", {mobile:number,pass:pin, repass:repin});
+
+    }
 
     if(isLoading){
       return<><LoadingScreen></LoadingScreen></>
@@ -134,7 +138,7 @@ export default function Signup({ navigation }) {
       description={t(`Confirm 4 Digit PIN`)}
       keyboardType="number-pad"
     />
-    <Button mode="contained" onPress={doSignup}>
+    <Button mode="contained" onPress={doOtp}>
       {t('Create Account')}
     </Button>
     <RedirectLink 

@@ -17,7 +17,7 @@ const BankCard = (prop) => {
 
 const styles = StyleSheet.create({
   cellContainer: {
-    backgroundColor: 'rgba(242, 242, 242,0.5)',
+    backgroundColor: 'rgba(255, 242, 242,0.5)',
     padding: 20,
     margin: 10,
     borderRadius: 10, 

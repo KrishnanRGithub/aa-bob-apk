@@ -53,8 +53,8 @@ const EquitySummary = (prop) => {
 };
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: 'rgba(242, 242, 242,0.5)',
-        padding: 10,
+      backgroundColor: 'rgba(255, 242, 242,0.5)',
+      padding: 10,
         margin: 10,
         paddingHorizontal:20,
         borderRadius:5,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getSession } from "../../helpers/sessionHandler";
 import AppScreen from "../../components/AppScreen";
+import CarrosalCard from "../../components/CarrosalCard";
 export default function Profile({ navigation }) {
   const [userDetails,setUserDetails] = useState(null);
   useEffect(() => {
@@ -11,7 +12,7 @@ export default function Profile({ navigation }) {
 
   return (
     <AppScreen prop={{onRefresh:()=>{console.log("Refresh in profile")},title:"Home", routes:null}} >
-    
+    <CarrosalCard/>
   </AppScreen>
   );
 }
