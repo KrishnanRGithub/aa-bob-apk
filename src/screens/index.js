@@ -6,6 +6,8 @@ export { default as Signup } from "./Signup";
 export { default as Logout } from "./Logout";
 export { default as NameScreen } from "./NameScreen";
 export { default as AccountDetails } from "./tab/AccountDetails";
+export { default as SetGoals } from "./tab/SetGoals";
+
 
 export { default as Equities } from "./tab/Equities";
 export { default as MutualFund } from "./tab/MutualFund";

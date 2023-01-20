@@ -12,9 +12,9 @@ const ITEM_WIDTH = Dimensions.get("window").width - (OFFSET * 2)
 const ITEM_HEIGHT = 200
 
 const cards = [
-  { title: "Movie 1", posterUrl: require("../assets/product_banner/car_loan.jpeg") },
   { title: "Movie 2", posterUrl: require("../assets/product_banner/car_loan.jpg") },
-  { title: "Movie 3", posterUrl: require("../assets/product_banner/car_loan.jpeg") },
+  { title: "Movie 1", posterUrl: require("../assets/product_banner/fd_2.jpeg") },
+  { title: "Movie 3", posterUrl: require("../assets/product_banner/fd.jpeg") },
   { title: "Movie 4", posterUrl: require("../assets/product_banner/car_loan.jpeg") },
 ]
 

@@ -41,6 +41,11 @@ export default function Profile({ navigation }) {
               item={{text:"Support",icon:"support-agent"}} 
               onPress={()=>{console.log("Support")}} 
             />  */}
+
+        <ListButton 
+              item={{text:"Set Limits",icon:"playlist-add-check"}} 
+              onPress={()=>{navigation.navigate("SetGoals");}} 
+            /> 
           <LanguagePicker/>
           <ListButton 
               item={{text:"Logout",icon:"logout"}} 

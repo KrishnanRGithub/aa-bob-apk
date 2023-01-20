@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { theme } from "./src/core/theme";
 import { StartScreen, Complete, Dashboard, Login, Signup, Logout} from "./src/screens";
-import { Profile, Equities, Transaction, MutualFund,AccountDetails,Loans, OtpScreen , Insurance} from "./src/screens";
+import { Profile, Equities, Transaction, MutualFund,AccountDetails,Loans, OtpScreen , Insurance,SetGoals} from "./src/screens";
 import {useFonts} from 'expo-font';
 import './src/texts/i18n';
 const Stack = createStackNavigator();
@@ -42,6 +42,7 @@ export default function App() {
           <Stack.Screen name="AccountDetails" component={AccountDetails} />
           <Stack.Screen name="Loans" component={Loans} />
           <Stack.Screen name="Insurance" component={Insurance} />
+          <Stack.Screen name="SetGoals" component={SetGoals} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

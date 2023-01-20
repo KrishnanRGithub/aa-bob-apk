@@ -63,3 +63,11 @@ export async function getMutualFund(value){
 export async function getAccounts(value){
     return await getSession(key.accounts)   ;
 }
+
+
+export async function getGoals(value){
+    return await getSession("goals")   ;
+}
+export async function storeGoals(value){
+    return await storeSession("goals", value)   ;
+}

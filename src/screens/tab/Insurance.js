@@ -50,9 +50,7 @@ export default function Insurance({ navigation }) {
     });
   }, []); // empty array ensures that the effect only runs once
   
-  useEffect(() => {
-    console.log("Added data")
-  }, [userDetails]); 
+
   
 
 
